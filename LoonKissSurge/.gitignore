@@ -1,0 +1,10 @@
+*.py
+*.yml
+node_modules
+public
+dist
+pnpm-lock.yaml
+Log
+package-lock.json
+.idea
+pre_set_modules.yaml
