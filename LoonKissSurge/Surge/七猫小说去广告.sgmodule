@@ -10,9 +10,9 @@
 #!date=2024-11-28 00:00:00
 
 [Rule]
-DOMAIN,cdn-ad.wtzw.com,REJECT,extended-matching,pre-matching
-DOMAIN,cdn-new-ad.wtzw.com,REJECT,extended-matching,pre-matching
-DOMAIN-SUFFIX,gdt.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,cdn-ad.wtzw.com,REJECT,extended-matching
+DOMAIN,cdn-new-ad.wtzw.com,REJECT,extended-matching
+DOMAIN-SUFFIX,gdt.qq.com,REJECT,extended-matching
 
 [URL Rewrite]
 # 头条广告SDK

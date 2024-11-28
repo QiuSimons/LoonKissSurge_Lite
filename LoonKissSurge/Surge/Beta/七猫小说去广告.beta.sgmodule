@@ -10,9 +10,9 @@
 #!date=2024-11-28 00:00:00
 
 [Rule]
-DOMAIN,cdn-ad.wtzw.com,REJECT,extended-matching,pre-matching
-DOMAIN,cdn-new-ad.wtzw.com,REJECT,extended-matching,pre-matching
-DOMAIN-SUFFIX,gdt.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,cdn-ad.wtzw.com,REJECT,extended-matching
+DOMAIN,cdn-new-ad.wtzw.com,REJECT,extended-matching
+DOMAIN-SUFFIX,gdt.qq.com,REJECT,extended-matching
 
 [URL Rewrite]
 # 头条广告SDK
@@ -22,8 +22,6 @@ DOMAIN-SUFFIX,gdt.qq.com,REJECT,extended-matching,pre-matching
 ^https:\/\/api-cfg\.wtzw\.com\/v\d\/adv\/ - reject
 
 [Body Rewrite]
-http-response-jq ^https:\/\/xiaoshuo\.wtzw\.com\/api\/v\d\/user\/my-center\? 'delpaths([["data","func_area",1]])'
-http-response-jq ^https:\/\/xiaoshuo\.wtzw\.com\/api\/v\d\/user\/my-center\? 'delpaths([["data","func_area",2]])'
 
 [Map Local]
 # 开屏广告

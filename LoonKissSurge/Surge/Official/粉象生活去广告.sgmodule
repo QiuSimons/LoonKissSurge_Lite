@@ -12,4 +12,3 @@ hostname = %APPEND%, api.fenxianglife.com
 
 [Body Rewrite]
 
-http-response-jq ^https?:\/\/api\.fenxianglife\.com\/njia\/index\/popup\/v2 '.data.list = []'

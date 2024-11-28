@@ -10,39 +10,39 @@
 
 [Rule]
 # Outlook
-DOMAIN,acdn.adnxs.com,REJECT,extended-matching,pre-matching
-DOMAIN,mediation.adnxs.com,REJECT,extended-matching,pre-matching
-DOMAIN,sin3-ib.adnxs.com,REJECT,extended-matching,pre-matching
+DOMAIN,acdn.adnxs.com,REJECT,extended-matching
+DOMAIN,mediation.adnxs.com,REJECT,extended-matching
+DOMAIN,sin3-ib.adnxs.com,REJECT,extended-matching
 # 小米
-DOMAIN,sdkconfig.ad.xiaomi.com,REJECT,extended-matching,pre-matching
-DOMAIN,data.mistat.xiaomi.com,REJECT,extended-matching,pre-matching
-DOMAIN,tracking.intl.miui.com,REJECT,extended-matching,pre-matching
+DOMAIN,sdkconfig.ad.xiaomi.com,REJECT,extended-matching
+DOMAIN,data.mistat.xiaomi.com,REJECT,extended-matching
+DOMAIN,tracking.intl.miui.com,REJECT,extended-matching
 # 米家
-DOMAIN,sdkconfig.ad.xiaomi.com,REJECT,extended-matching,pre-matching
+DOMAIN,sdkconfig.ad.xiaomi.com,REJECT,extended-matching
 # 通用广告
-DOMAIN-SUFFIX,doubleclick-cn.net,REJECT,extended-matching,pre-matching
-DOMAIN-SUFFIX,doubleclick.net,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,doubleclick-cn.net,REJECT,extended-matching
+DOMAIN-SUFFIX,doubleclick.net,REJECT,extended-matching
 # 虎牙直播开屏广告
-DOMAIN,business.msstatic.com,REJECT,extended-matching,pre-matching
-DOMAIN-SUFFIX,v1d.szbdyd.com,REJECT,extended-matching,pre-matching
+DOMAIN,business.msstatic.com,REJECT,extended-matching
+DOMAIN-SUFFIX,v1d.szbdyd.com,REJECT,extended-matching
 URL-REGEX,"^http:\/\/cdn\.wup\.huya\.com\/launch\/queryHttpDns$",REJECT,extended-matching
 # 中国联通
-DOMAIN-SUFFIX,m1.ad.10010.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,m1.ad.10010.com,REJECT,extended-matching
 # 中国电信
-DOMAIN,ad.21cn.com,REJECT,extended-matching,pre-matching
-DOMAIN,ad.k.21cn.com,REJECT,extended-matching,pre-matching
-DOMAIN,admarket.21cn.com,REJECT,extended-matching,pre-matching
-DOMAIN,adshows.21cn.com,REJECT,extended-matching,pre-matching
-IP-CIDR,122.229.8.47/32,REJECT,no-resolve,pre-matching
-IP-CIDR,122.229.29.89/32,REJECT,no-resolve,pre-matching
+DOMAIN,ad.21cn.com,REJECT,extended-matching
+DOMAIN,ad.k.21cn.com,REJECT,extended-matching
+DOMAIN,admarket.21cn.com,REJECT,extended-matching
+DOMAIN,adshows.21cn.com,REJECT,extended-matching
+IP-CIDR,122.229.8.47/32,REJECT,no-resolve
+IP-CIDR,122.229.29.89/32,REJECT,no-resolve
 # 快递100
 URL-REGEX,"^http:\/\/p\.kuaidi100\.com\/mobile\/mobileapi\.do",REJECT-TINYGIF,extended-matching
 URL-REGEX,"^http:\/\/p\.kuaidi100\.com\/advertisement\/",REJECT-TINYGIF,extended-matching
 # 亲邻开门
-DOMAIN,mall-dsp2.qinlinkeji.com,REJECT,extended-matching,pre-matching
-DOMAIN,mallapi2.qinlinkeji.com,REJECT,extended-matching,pre-matching
+DOMAIN,mall-dsp2.qinlinkeji.com,REJECT,extended-matching
+DOMAIN,mallapi2.qinlinkeji.com,REJECT,extended-matching
 # Pixiv - 作品底部广告
-DOMAIN,open-pixon.ads-pixiv.net,REJECT,extended-matching,pre-matching
+DOMAIN,open-pixon.ads-pixiv.net,REJECT,extended-matching
 
 [URL Rewrite]
 # 摩托范弹窗广告

@@ -10,7 +10,6 @@
 #!date=2024-11-28 00:00:00
 
 [Body Rewrite]
-http-response-jq ^https:\/\/(h3\.)?open\.taou\.com\/maimai\/feed\/v6\/detail_recommend_feeds\? 'delpaths([["feeds"]])'
 
 [Map Local]
 # 开屏广告、职位页面横幅

@@ -10,14 +10,6 @@
 #!date=2024-11-28 00:00:00
 
 [Body Rewrite]
-http-response-jq ^https:\/\/app\.missevan\.com\/site\/launch\? 'delpaths([["info"]])'
-http-response-jq ^https:\/\/fm\.missevan\.com\/api\/v2\/meta\/banner$ 'delpaths([["info"]])'
-http-response-jq ^https:\/\/app\.missevan\.com\/site\/get-top$ 'delpaths([["info","extra_banners"]])'
-http-response-jq ^https:\/\/fm\.missevan\.com\/api\/v2\/recommended\/top$ 'delpaths([["info"]])'
-http-response-jq ^https:\/\/app\.missevan\.com\/drama\/catalog-homepage\? 'delpaths([["info","extra_banners"]])'
-http-response-jq ^https:\/\/app\.missevan\.com\/catalog\/sound-homepage\? 'delpaths([["info","extra_banners"]])'
-http-response-jq ^https:\/\/fm\.missevan\.com\/api\/v2\/chatroom\/sound\/recommend\? 'delpaths([["info"]])'
-http-response-jq ^https:\/\/app\.missevan\.com\/site\/config$ 'delpaths([["info","teenager_popup_mode"]])'
 
 [Script]
 # 首页顶部入口

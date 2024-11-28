@@ -11,18 +11,10 @@
 
 [Rule]
 # 拦截HTTPDNS
-DOMAIN,httpdns.baidubce.com,REJECT,extended-matching,pre-matching
-IP-CIDR,186.76.76.200/32,REJECT,no-resolve,pre-matching
+DOMAIN,httpdns.baidubce.com,REJECT,extended-matching
+IP-CIDR,186.76.76.200/32,REJECT,no-resolve
 
 [Body Rewrite]
-http-response-jq ^https:\/\/newclient\.map\.baidu\.com\/feed\/govui\/rich_content 'delpaths([["data"]])'
-http-response-jq ^https:\/\/newclient\.map\.baidu\.com\/client\/noticebar\/get\? 'delpaths([["content","multi_data"]])'
-http-response-jq ^https:\/\/newclient\.map\.baidu\.com\/(client\/)?usersystem\/mine\/page\? 'if (getpath([]) | has("data")) then (setpath(["data"]; {})) else . end'
-http-response-jq ^https:\/\/newclient\.map\.baidu\.com\/client\/phpui2\/\?qt=ads&type=user_home_new_service 'delpaths([["ads"]])'
-http-response-jq ^https:\/\/newclient\.map\.baidu\.com\/living\/nearby\/api\? 'delpaths([["Result","cards",1]])'
-http-response-jq ^https:\/\/newclient\.map\.baidu\.com\/living\/nearby\/api\? 'delpaths([["Result","cards",4]])'
-http-response-jq ^https:\/\/newclient\.map\.baidu\.com\/living\/nearby\/api\? 'delpaths([["Result","cards",5]])'
-http-response-jq ^https:\/\/newclient\.map\.baidu\.com\/living\/nearby\/api\? 'delpaths([["Result","cards",9]])'
 
 [Map Local]
 # 开屏广告

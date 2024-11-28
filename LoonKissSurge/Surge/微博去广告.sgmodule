@@ -13,11 +13,11 @@
 # 请求放行
 DOMAIN,wbapp.uve.weibo.com,DIRECT,extended-matching
 # 微博开屏广告
-DOMAIN-SUFFIX,biz.weibo.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,biz.weibo.com,REJECT,extended-matching
 # 拦截HTTPDNS
-DOMAIN,dns.weibo.cn,REJECT,extended-matching,pre-matching
-IP-CIDR,39.97.130.51/32,REJECT,no-resolve,pre-matching
-IP-CIDR,39.97.128.148/32,REJECT,no-resolve,pre-matching
+DOMAIN,dns.weibo.cn,REJECT,extended-matching
+IP-CIDR,39.97.130.51/32,REJECT,no-resolve
+IP-CIDR,39.97.128.148/32,REJECT,no-resolve
 URL-REGEX,"^http:\/\/api\.weibo\.cn\/2\/httpdns\/config",REJECT,extended-matching
 URL-REGEX,"^http:\/\/api\.weibo\.cn\/httpdns\/config",REJECT,extended-matching
 
