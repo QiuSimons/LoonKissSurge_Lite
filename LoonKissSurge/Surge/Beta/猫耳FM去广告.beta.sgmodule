@@ -7,7 +7,7 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-12-08 00:07:45
+#!date=2024-12-08 00:49:15
 
 [Body Rewrite]
 
@@ -17,8 +17,6 @@
 ^https:\/\/app\.missevan\.com\/sound\/recommend\? data-type=text data="{}" status-code=200
 
 ^https:\/\/app\.missevan\.com\/drama\/get-recommend-by-id\? data-type=text data="{}" status-code=200
-
-^https:\/\/fm\.missevan\.com\/api\/v\d\/chatroom\/open\/feed-list$ data-type=text data="{}" status-code=200
 
 ^https:\/\/fm\.missevan\.com\/api\/v\d\/meta\/banner$ data-type=text data="{}" status-code=200
 
