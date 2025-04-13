@@ -138,6 +138,8 @@ DOMAIN,ztoken.uyunad.com,REJECT,extended-matching
 DOMAIN,aaid.uyunad.com,REJECT,extended-matching
 DOMAIN,yumao.puata.info,REJECT,extended-matching
 
+[Body Rewrite]
+
 [Map Local]
 ^https:\/\/api\.xiachufang\.com\/v2\/ad\/ data-type=text data="{}" status-code=200
 

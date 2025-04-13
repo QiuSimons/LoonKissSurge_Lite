@@ -138,6 +138,8 @@ DOMAIN,adtrack.e.kuaishou.com,REJECT,extended-matching
 DOMAIN-SUFFIX,adukwai.com,REJECT,extended-matching
 DOMAIN-SUFFIX,adbkwai.com,REJECT,extended-matching
 
+[Body Rewrite]
+
 [Map Local]
 ^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/fortune\/question_spots\/panel\? data-type=text data="{}" status-code=200
 

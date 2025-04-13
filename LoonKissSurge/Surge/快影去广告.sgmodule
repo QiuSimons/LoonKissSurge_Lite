@@ -150,6 +150,8 @@ DOMAIN,api.verify.mob.com,REJECT,extended-matching
 DOMAIN,log-verify.mob.com,REJECT,extended-matching
 DOMAIN,sdk.push.mob.com,REJECT,extended-matching
 
+[Body Rewrite]
+
 [Map Local]
 ^https:\/\/api\.kmovie\.gifshow\.com\/rest\/n\/kmovie\/app\/resource\/get\? data-type=text data="{}" status-code=200
 

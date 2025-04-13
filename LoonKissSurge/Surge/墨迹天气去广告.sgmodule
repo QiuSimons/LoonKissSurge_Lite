@@ -149,6 +149,8 @@ AND,((DOMAIN-KEYWORD,adash,extended-matching),(DOMAIN-SUFFIX,ut.taobao.com,exten
 [URL Rewrite]
 ^https:\/\/fcard\.api\.moji\.com\/flycard\/flyCard\? - reject
 
+[Body Rewrite]
+
 [Map Local]
 ^https:\/\/vdo\.api\.moji\.com\/shortvideo\/card\/subscribe$ data-type=text data="{}" status-code=200
 
