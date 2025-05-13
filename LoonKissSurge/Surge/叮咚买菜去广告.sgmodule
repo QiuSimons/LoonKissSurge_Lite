@@ -1,0 +1,46 @@
+#!name=叮咚买菜去广告
+#!desc=移除开屏广告、弹窗推广、搜索推荐、信息流广告、悬浮广告、各页面购物推荐、精简我的页面，移除底栏和各页面AI入口。
+#!author=zirawell[https://github.com/zirawell], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], wish
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DingdongMaicai.png
+#!category=iKeLee
+#!openUrl=https://apps.apple.com/app/id768082524
+#!tag=去广告
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!date=2025-05-13 15:17:08
+
+[Rule]
+DOMAIN,trackercollect.ddxq.mobi,REJECT,extended-matching
+DOMAIN,ddfs-public.ddimg.mobi,REJECT,extended-matching
+DOMAIN,rttrack.ddxq.mobi,REJECT,extended-matching
+
+[URL Rewrite]
+^https?:\/\/maicai\.api\.ddxq\.mobi\/advert\/ - reject
+^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/getHomeAdPop - reject
+
+[Body Rewrite]
+
+[Map Local]
+^https?:\/\/119\.29\.29\.\d+\/d data-type=text data=" " status-code=200
+
+^https:\/\/maicai\.api\.ddxq\.mobi\/vip\/getVipAd\/\? data-type=text data="{}" status-code=200
+
+^https:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/marketingNotice\? data-type=text data="{}" status-code=200
+
+^https:\/\/maicai\.api\.ddxq\.mobi\/search\/rollHotKeyword\? data-type=text data="{}" status-code=200
+
+^https:\/\/maicai\.api\.ddxq\.mobi\/search\/rankingList\? data-type=text data="{}" status-code=200
+
+^https:\/\/maicai\.api\.ddxq\.mobi\/search\/hotKeyword\? data-type=text data="{}" status-code=200
+
+^https:\/\/maicai\.api\.ddxq\.mobi\/order\/getRecommend$ data-type=text data="{}" status-code=200
+
+^https:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/userLike\? data-type=text data="{}" status-code=200
+
+^https:\/\/user\.api\.ddxq\.mobi\/userportal-service\/api\/v1\/user\/queryMyPage\/\? data-type=text data="{}" status-code=200
+
+^https:\/\/maicai\.api\.ddxq\.mobi\/guide-service\/userLike\/flowData$ data-type=text data="{}" status-code=200
+
+[MITM]
+hostname = %APPEND% 119.29.29.*, maicai.api.ddxq.mobi, user.api.ddxq.mobi
+
