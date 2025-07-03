@@ -12,6 +12,7 @@
 [Body Rewrite]
 
 [Map Local]
+# 订阅弹窗
 ^https:\/\/(api|tool)\.xiuxiu\.meitu\.com\/v\d\/vip\/sub_popup\.json data-type=text data="{}" status-code=200
 
 ^https:\/\/(api|tool)\.xiuxiu\.meitu\.com\/\/v\d\/vip\/popup_show\.json data-type=text data="{}" status-code=200

@@ -1,5 +1,5 @@
 #!name=什么值得买去广告
-#!desc=移除开屏广告、信息流广告、各类横幅广告、搜索页广告，精简我的页面。
+#!desc=移除开屏广告、信息流广告、各类横幅广告、搜索页广告，移除活动皮肤，精简我的页面。
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/smzdm.png
 #!category=BetaModule
@@ -7,27 +7,37 @@
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-06-10 00:02:18
+#!date=2025-06-29 18:19:35
 
 [Rule]
+# 广告下发
 DOMAIN,adx-api.zdmimg.com,REJECT,extended-matching
 
 [URL Rewrite]
+# 好价 - 今日好券
 ^https:\/\/h5\.smzdm\.com\/user\/coupon\/coupon_list\? - reject
 
 [Body Rewrite]
 
 [Map Local]
+# 开屏广告
 ^https:\/\/app-api\.smzdm\.com\/util\/loading\? data-type=text data="{}" status-code=200
 
+# 首页 - 顶部频道
 ^https:\/\/app-api\.smzdm\.com\/mychannel\/list$ data-type=text data="{}" status-code=200
 
+# 我的 - 服务卡片
 ^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list\? data-type=text data="{}" status-code=200
 
+# 气泡提示
 ^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble\? data-type=text data="{}" status-code=200
 
+# 搜索 - 填充词
 ^https:\/\/s-api\.smzdm\.com\/sou\/search_default_keyword\? data-type=text data="{}" status-code=200
 
+# 搜索 - 弹窗
+^https:\/\/s-api\.smzdm\.com\/sou\/popup_coupon\? data-type=text data="{}" status-code=200
+
 [MITM]
-hostname = %APPEND% app-api.smzdm.com, homepage-api.smzdm.com, h5.smzdm.com, haojia-api.smzdm.com, haojia.m.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, s-api.smzdm.com
+hostname = %APPEND% app-api.smzdm.com, homepage-api.smzdm.com, h5.smzdm.com, haojia-api.smzdm.com, haojia.m.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, s-api.smzdm.com, haojia-cdn.smzdm.com
 

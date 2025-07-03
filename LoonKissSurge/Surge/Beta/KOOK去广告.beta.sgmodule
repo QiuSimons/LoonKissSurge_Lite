@@ -12,6 +12,7 @@
 [Body Rewrite]
 
 [Map Local]
+# 开屏广告
 ^https:\/\/www\.kookapp\.cn\/api\/v3\/ad\/config$ data-type=text data="{}" status-code=200
 
 [MITM]
