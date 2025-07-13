@@ -12,10 +12,8 @@
 [Body Rewrite]
 
 [Map Local]
-# 开屏广告
 ^https:\/\/gorgon\.youdao\.com\/gorgon\/brand\/prefetch\.s\? data-type=text data="{}" status-code=200
 
-# 首页横幅及信息流广告
 ^https:\/\/gorgon\.youdao\.com\/gorgon\/request\.s\? data-type=text data="{}" status-code=200
 
 [MITM]

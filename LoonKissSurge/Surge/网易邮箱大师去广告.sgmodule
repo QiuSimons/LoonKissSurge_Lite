@@ -12,13 +12,10 @@
 [Body Rewrite]
 
 [Map Local]
-# 拦截HTTPDNS
 ^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/http\/urlConfig\.do$ data-type=text data="{}" status-code=200
 
-# 签到任务
 ^https:\/\/dashi\.163\.com\/task-center-api\/fapi\/task\/list$ data-type=text data="{}" status-code=200
 
-# 扩容推广
 ^https:\/\/appconf\.mail\.163\.com\/mailoperating\/mailmaster\/api\/operator\/get$ data-type=text data="{}" status-code=200
 
 [MITM]

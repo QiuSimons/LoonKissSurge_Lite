@@ -15,15 +15,12 @@ DOMAIN,sdk.ad.sfys365.com,REJECT,extended-matching
 [Body Rewrite]
 
 [Map Local]
-# 天气 - 生活服务 - 热门咨询
 ^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/fortune\/question_spots\/panel\? data-type=text data="{}" status-code=200
 
-# 黄历 - 居家布局、为你推荐
 ^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/jujia\/flow\? data-type=text data="{}" status-code=200
 
 ^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/album\/hl_card\? data-type=text data="{}" status-code=200
 
-# 好运 - 快速咨询
 ^https:\/\/client-lz\.rili\.cn\/lizhi\/api\/fortune\/overview\? data-type=text data="{}" status-code=200
 
 [MITM]
