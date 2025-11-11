@@ -1,0 +1,35 @@
+#!name=爱奇艺去广告
+#!desc=移除开屏广告、焦点图广告、瀑布流广告、搜索页面广告、移除青少年弹窗，精简底栏和我的页面。
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/iQiYi_Video.png
+#!category=iKeLee
+#!openUrl=https://apps.apple.com/app/id1190755526
+#!tag=去广告
+#!loon_version=3.2.4(787)
+#!homepage=https://hub.kelee.one
+#!date=2025-05-13 15:17:08
+
+[Rule]
+IP-CIDR,103.44.59.54/32,REJECT,no-resolve
+IP-CIDR,111.63.147.158/32,REJECT,no-resolve
+IP-CIDR,116.211.198.237/32,REJECT,no-resolve
+DOMAIN-SUFFIX,cupid.iqiyi.com,DIRECT,extended-matching
+DOMAIN,api.iqiyi.com,REJECT,extended-matching
+DOMAIN,access.if.iqiyi.com,REJECT,extended-matching
+
+[Body Rewrite]
+
+[Map Local]
+^https?:\/\/iface2\.iqiyi\.com\/control\/3\.0\/init_proxy\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/v2\/show\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/iface2\.iqiyi\.com\/ivos\/interact\/video\/data\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/iface2\.iqiyi\.com\/video\/3\.0\/v_interface_proxy\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/iface2\.iqiyi\.com\/views_pop\/3\.0\/pop_control\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[MITM]
+hostname = %APPEND% -i.vip.iqiyi.com, *.iqiyi.com
+
