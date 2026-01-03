@@ -1,6 +1,6 @@
 #!name=百度贴吧去广告
-#!desc=移除开屏广告、信息流广告和帖内广告，精简侧拉抽屉及我的页面。需注意此插件会导致新回复等通知功能不可用，需手动进入消息页点击查看。仅限iOS 15及以上版本系统使用。
-#!author=app2smile[https://github.com/app2smile], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!desc=移除开屏广告、信息流广告和帖内广告，精简侧拉抽屉及我的页面。
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], app2smile[https://github.com/app2smile]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Tieba.png
 #!category=iKeLee
 #!openUrl=https://apps.apple.com/app/id477927812
@@ -8,7 +8,8 @@
 #!system_version=15
 #!loon_version=3.2.4(787)
 #!homepage=https://hub.kelee.one
-#!date=2025-11-20 01:28:27
+#!date=2026-01-01 15:45:01
+#!arguments=per_filter_video_thread:"true"
 
 [Rule]
 DOMAIN,180.76.76.200,REJECT,extended-matching
@@ -17,12 +18,20 @@ IP-CIDR,180.76.76.200/32,REJECT,no-resolve
 [Body Rewrite]
 
 [Map Local]
-^https:\/\/tieba\.baidu\.com\/c\/f\/member\/getMemberPopups$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/tiebac\.baidu\.com\/c\/f\/forum\/getInterestClassList$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-^https:\/\/tiebac\.baidu\.com\/c\/f\/search\/discover$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/tiebac\.baidu\.com\/c\/f\/search\/discover$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/tieba\.baidu\.com\/c\/f\/search\/discover$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/tieba\.baidu\.com\/c\/f\/forum\/getForumAlbum$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^http:\/\/c\.tieba\.baidu\.com\/c\/f\/forum\/hotforum$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/tieba\.baidu\.com\/mo\/q\/search\/startPage\? data-type=text data="{"no":0,"error":"success"}" status-code=200 header="Content-Type:application/json"
 
 [Script]
-ProtoBuf处理 = type=http-response, pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd, script-path=https://kelee.one/Resource/JavaScript/Tieba/tieba-proto.js, requires-body=true, binary-body-mode=true, timeout=10
+ProtoBuf处理 = type=http-response, pattern=^https?:\/\/tieba(?:c)?\.baidu\.com\/c\/(f\/excellent\/personalized|f\/frs\/page|b\/ad\/adBid|f\/ad\/getFeedAd|f\/pb\/page|f\/frs\/generalTabList)\?cmd=\d+&format=protobuf, script-path=https://kelee.one/Resource/JavaScript/Tieba/tieba-proto.js, requires-body=true, binary-body-mode=true, timeout=10, argument=[{{{per_filter_video_thread}}}]
 
 [MITM]
 hostname = %APPEND% tiebac.baidu.com, tieba.baidu.com
